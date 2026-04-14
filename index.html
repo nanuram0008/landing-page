@@ -1,0 +1,147 @@
+```html id="6b2xkd"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Jet Beast</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+
+body{
+  background: radial-gradient(circle,#2b0000,#000);
+  color:#fff;
+  text-align:center;
+}
+
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
+
+/* HEADLINE */
+.headline{
+  color:#ffe600;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+/* LOGO */
+.logo{
+  width:170px;
+  height:170px;
+  margin:auto;
+  border-radius:50%;
+  background:url('https://i.imgur.com/3ZQ3Z4K.png') center/cover no-repeat;
+  box-shadow:0 0 25px red;
+}
+
+/* TITLE */
+.title{
+  font-size:28px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+/* LIVE */
+.live{
+  margin-top:10px;
+  color:#00ff9c;
+}
+
+/* TIMER */
+.timer{
+  margin-top:10px;
+  color:#ff4d4d;
+  font-weight:bold;
+}
+
+/* CTA */
+.btn{
+  display:block;
+  margin-top:20px;
+  padding:16px;
+  background:linear-gradient(45deg,#0088cc,#004466);
+  border-radius:12px;
+  color:#fff;
+  font-size:18px;
+  text-decoration:none;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+
+.trust{
+  margin-top:10px;
+  font-size:12px;
+  color:#aaa;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="headline">INDIA'S MOST DEMANDING CHANNEL 🔥</div>
+
+  <div class="logo"></div>
+
+  <div class="title">JET BEAST</div>
+
+  <div class="live">
+    👥 <span id="liveCount">1321</span> joined today
+  </div>
+
+  <div class="timer">
+    ⏳ Redirecting in <span id="redirectTimer">8</span>s...
+  </div>
+
+  <a href="https://t.me/yourchannel" class="btn" onclick="trackClick()">
+    🚀 JOIN FREE NOW
+  </a>
+
+  <div class="trust">🔒 Free • No Spam • Instant Access</div>
+
+</div>
+
+<script>
+// ===== SETTINGS =====
+let redirectURL = "https://t.me/yourchannel";
+let redirectTime = 8;
+
+// ===== AUTO REDIRECT =====
+let timer = redirectTime;
+let countdown = setInterval(()=>{
+  document.getElementById("redirectTimer").innerText = timer;
+  timer--;
+
+  if(timer < 0){
+    window.location.href = redirectURL;
+  }
+},1000);
+
+// ===== FAKE LIVE COUNT =====
+setInterval(()=>{
+  let el = document.getElementById("liveCount");
+  el.innerText = parseInt(el.innerText) + Math.floor(Math.random()*3);
+},3000);
+
+// ===== CLICK TRACKING =====
+function trackClick(){
+  console.log("CTA Clicked");
+  // You can connect Facebook Pixel / Google Analytics here
+}
+</script>
+
+</body>
+</html>
+```
